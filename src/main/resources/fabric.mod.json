@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "projectsycamore",
+  "version": "${version}",
+  "name": "Project Sycamore",
+  "description": "",
+  "authors": ["Kaicillin"],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/projectsycamore/ProjectSycamoreLogoFinal.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "ps.projectsycamore.ProjectSycamoreDataGenerator"
+    ],
+    "client": [
+      "ps.projectsycamore.ProjectSycamoreClient"
+    ],
+    "main": [
+      "ps.projectsycamore.ProjectSycamore"
+    ]
+  },
+  "mixins": [
+    "projectsycamore.mixins.json",
+    {
+      "config": "projectsycamore.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
